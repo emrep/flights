@@ -12,6 +12,7 @@ public class Flight {
     private String arrivalAirport;
     private LocalDateTime departureTime;
     private LocalDateTime arrivalTime;
+    private EnumProvider provider;
 
     public Flight(CheapFlight cheapFlight) {
         id = cheapFlight.getId();
@@ -19,6 +20,7 @@ public class Flight {
         arrivalAirport = cheapFlight.getArrival();
         departureTime = DateUtil.convertToLocalDateTimeViaMilisecond(cheapFlight.getDepartureTime());
         arrivalTime = DateUtil.convertToLocalDateTimeViaMilisecond(cheapFlight.getArrivalTime());
+        provider = EnumProvider.CHEAP_FLIGHTS;
     }
 
     public Flight(BusinessFlight businessFlight) {
@@ -28,5 +30,6 @@ public class Flight {
         arrivalAirport = flight[1];
         departureTime = businessFlight.getDeparture();
         arrivalTime = businessFlight.getArrival();
+        provider = EnumProvider.BUSINESS_FLIGHTS;
     }
 }

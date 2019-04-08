@@ -2,6 +2,7 @@ package com.emrep.flights.service;
 
 import com.emrep.flights.model.BusinessFlight;
 import com.emrep.flights.model.CheapFlight;
+import com.emrep.flights.model.EnumProvider;
 import com.emrep.flights.model.Flight;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
@@ -16,8 +17,7 @@ import java.util.List;
 @Service
 public class FlightServiceImpl implements FlightService {
 
-    private static final String CHEAP_FLIGHTS_URL = "https://obscure-caverns-79008.herokuapp.com/cheap";
-    private static final String BUSINESS_FLIGHTS_URL = "https://obscure-caverns-79008.herokuapp.com/business";
+
     private final RestTemplate restTemplate;
 
     @Autowired
@@ -39,13 +39,13 @@ public class FlightServiceImpl implements FlightService {
 
     private List<CheapFlight> getCheapFlights() {
         ParameterizedTypeReference<List<CheapFlight>> responseType = new ParameterizedTypeReference<List<CheapFlight>>() {};
-        ResponseEntity<List<CheapFlight>> response = restTemplate.exchange(CHEAP_FLIGHTS_URL, HttpMethod.GET, null, responseType);
+        ResponseEntity<List<CheapFlight>> response = restTemplate.exchange(EnumProvider.CHEAP_FLIGHTS.getUrl(), HttpMethod.GET, null, responseType);
         return response.getBody();
     }
 
     private List<BusinessFlight> getBusinessFlights() {
         ParameterizedTypeReference<List<BusinessFlight>> responseType = new ParameterizedTypeReference<List<BusinessFlight>>() {};
-        ResponseEntity<List<BusinessFlight>> response = restTemplate.exchange(BUSINESS_FLIGHTS_URL, HttpMethod.GET, null, responseType);
+        ResponseEntity<List<BusinessFlight>> response = restTemplate.exchange(EnumProvider.BUSINESS_FLIGHTS.getUrl(), HttpMethod.GET, null, responseType);
         return response.getBody();
     }
 }
