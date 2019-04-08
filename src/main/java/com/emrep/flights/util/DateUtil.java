@@ -11,9 +11,7 @@ public final class DateUtil {
     }
 
     public static LocalDateTime convertToLocalDateTimeViaMilisecond(Date dateToConvert) {
-        return Instant.ofEpochMilli(dateToConvert.getTime())
-                .atZone(ZoneId.systemDefault())
-                .toLocalDateTime();
+        return Instant.ofEpochMilli(dateToConvert.getTime()).atZone(ZoneId.systemDefault()).toLocalDateTime();
     }
 
 }

@@ -14,7 +14,7 @@ public class FlightCriteria {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate arrivalDate;
 
-    private Integer pageSize;
+    private Integer pageSize = 20;
     private Integer pageNo = 1;
 
     private EnumSort sort;
