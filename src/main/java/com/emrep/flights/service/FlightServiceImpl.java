@@ -46,7 +46,7 @@ public class FlightServiceImpl implements FlightService {
         }
 
         if(Objects.nonNull(flightCriteria.getArrivalAirport())) {
-            filteredFlights = filteredFlights.stream().filter(flight -> flight.getDepartureAirport().equals(flightCriteria.getArrivalAirport())).collect(Collectors.toList());
+            filteredFlights = filteredFlights.stream().filter(flight -> flight.getArrivalAirport().equals(flightCriteria.getArrivalAirport())).collect(Collectors.toList());
         }
 
         if(Objects.nonNull(flightCriteria.getDepartureDate())) {
