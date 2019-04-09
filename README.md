@@ -6,8 +6,8 @@ As testing frameworks, [JUnit 5](https://junit.org/junit5/) and [Mockito](https:
 ## Application Parameters 
 Parameters of the Aplication can be easily changed with changing application.properties file. Each parameter is explained below: <br />
 **server.port:** port number the application is listening <br />
-**api.request.proxy.url:** If there is a proxy in the network, It is supposed to be set the proxy url for requesting Restful APIs <br />
-**api.request.proxy.port:** If there is a proxy in the network, It is supposed to be set the proxy port for requesting Restful APIs <br />
+**api.request.proxy.url:** If there is a proxy in the network, It is supposed to be set for requesting Restful APIs <br />
+**api.request.proxy.port:** If there is a proxy in the network, It is supposed to be set for requesting Restful APIs <br />
 
 ## Build & Run 
 After setting the parameters of the aplication, The application can be easily up running the boot class named FlightsApplication.  
